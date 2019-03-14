@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, target-densitydpi=device-dpi, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!----------------------LOCAL----------------------------->
+
+    <link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+    <script src="jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="jquery/popper.min.js"></script>
+
+    <link rel="stylesheet" href="app-styles.css">
+    <script src="array.js"></script>
+
+    <!----------------------LOCAL----------------------------->
+
+    <title>iBag</title>
+</head>
+
+<body>
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container navbar-container text-uppercase">
+                    <a class="navbar-brand col-xs-3 text-color" href="#wrapper1">
+                        <img class="img-responsive svg-logo mx-auto d-block" src="images/logo-store.png">
+                        <p class="text-below text-uppercase-none">iBag</p>
+                    </a>
+                    <a onclick="wrapper2()" class="navbar-brand col-xs-3 text-color f-show" href="#wrapper2">
+                        <svg class="mx-auto d-block svg-iphone" viewBox="0 0 50 54">
+                                    <path class="cls-1" d="M47.13,13H36v4H49V47H36v1a4,4,0,0,1-1.38,3H47.13A3,3,0,0,0,50,48V15.88A2.89,2.89,0,0,0,47.13,13ZM42,15.5H39V15h3Zm-1.5,35A1.5,1.5,0,1,1,42,49,1.5,1.5,0,0,1,40.5,50.5Z"/>
+                                    <path class="cls-1" d="M21.65,51H32a3,3,0,0,0,3-3V13a3,3,0,0,0-3-3H23v3h6a.92.92,0,0,0,1-.83c0-.06,0-.78,0-.81,0-.25.29-.34.44-.36H32.2A1.81,1.81,0,0,1,34,12.8V48.2A1.81,1.81,0,0,1,32.2,50H22.56A4.36,4.36,0,0,1,21.65,51ZM27,11.5a.25.25,0,0,1-.25.25h-2.5a.25.25,0,0,1,0-.5h2.5A.25.25,0,0,1,27,11.5Z"/>
+                                    <path class="cls-1" d="M18.66,5H3.34A3.35,3.35,0,0,0,0,8.34V47.66A3.36,3.36,0,0,0,3.36,51H18.64A3.36,3.36,0,0,0,22,47.66V8.34A3.35,3.35,0,0,0,18.66,5ZM13.5,6.13a.38.38,0,1,1-.37.38A.37.37,0,0,1,13.5,6.13Zm-4.25.34a.21.21,0,0,1,.21-.21h3.07a.21.21,0,0,1,.21.21v.07a.21.21,0,0,1-.21.21H9.46a.21.21,0,0,1-.21-.21ZM21,48a2,2,0,0,1-2,2H3a2,2,0,0,1-2-2V8A2,2,0,0,1,3,6h1.5c.16,0,.46.14.49.42,0,0,0,.59,0,.65A1,1,0,0,0,6.15,8h9.71A1,1,0,0,0,17,7.07c0-.06,0-.64,0-.67,0-.28.33-.38.49-.4H19a2,2,0,0,1,2,2Z"/>
+                        </svg>
+                        <p class="text-below">iPhone</p>
+                    </a>
+                    <a onclick="wrapper3()" class="navbar-brand col-xs-3 text-color f-show" href="#wrapper3">
+                            <svg class="mx-auto d-block svg-ipad" viewBox="0 0 46 54">
+                                    <path d="M20.74,20H1.27A1.3,1.3,0,0,0,0,21.26V49.8A1.26,1.26,0,0,0,1.27,51H20.74A1.31,1.31,0,0,0,22,49.74V21.26A1.3,1.3,0,0,0,20.74,20Zm-9.79,1.25a.43.43,0,1,1-.43.43A.43.43,0,0,1,10.94,21.25ZM11,50.5a1,1,0,1,1,1-1A1,1,0,0,1,11,50.5ZM20,48H2V23H20ZM33.74,11H8.26A1.24,1.24,0,0,0,7,12.25V19H9V15H33V47H23v2.59c0,.8-.1,1.19-.69,1.41H33.74A1.24,1.24,0,0,0,35,49.75V12.25A1.24,1.24,0,0,0,33.74,11ZM21,13.5a.5.5,0,1,1,.5-.5A.5.5,0,0,1,21,13.5Z"/>
+                                    <path d="M35.39,51h9.24A1.34,1.34,0,0,0,46,49.68V4.51A1.51,1.51,0,0,0,44.64,3H13.31A1.48,1.48,0,0,0,12,4.56V10h2V6.05A1,1,0,0,1,15,5H43a1,1,0,0,1,1,1V48a1,1,0,0,1-1,1H36v.87A1.19,1.19,0,0,1,35.39,51Z"/>
+                            </svg>
+                        <p class="text-below">iPad</p>
+                    </a>
+                    <a onclick="wrapper4()" class="navbar-brand col-xs-3 text-color f-show" href="#wrapper4">
+                        <svg class="mx-auto d-block svg-watch" viewBox="0 0 25 54">
+                            <path d="M24,28V23H23V21.33a4.27,4.27,0,0,0-.59-2.16c-0.4-.68-1.11-1.26-1.54-1.93a9.64,9.64,0,0,1-1.31-3c-0.27-1.15-.19-2.34-0.42-3.5a1.77,1.77,0,0,0-1.68-1.4c-0.93-.13-1.87-0.2-2.81-0.26S12.68,9,11.7,9a28.24,28.24,0,0,0-5.59.43A1.53,1.53,0,0,0,5,10.57c-0.11.54-.2,1.86-0.3,2.63a7.49,7.49,0,0,1-1.88,4.44l-0.46.51A4.46,4.46,0,0,0,1,21.33V38.67a4.22,4.22,0,0,0,1.39,3.21A5.82,5.82,0,0,1,4.64,46c0.18,1.16.05,2.33,0.28,3.46a1.63,1.63,0,0,0,1.26,1.11,33.67,33.67,0,0,0,6.07.43,28.24,28.24,0,0,0,5.59-.43A1.53,1.53,0,0,0,19,49.43c0.11-.54-0.14-3.17.79-4.76,0.33-.56,1.74-2.67,1.74-2.67s0.16-.22.2-0.26A4.52,4.52,0,0,0,23,38.67V28h1ZM22,38.67A3.21,3.21,0,0,1,19,42H5a3.2,3.2,0,0,1-3-3.33V21.33A3.21,3.21,0,0,1,5,18H19a3.21,3.21,0,0,1,3,3.33V38.67Z"/>
+                        </svg>
+                    <p class="text-below">Watch</p>
+                </a>
+            </div>
+          </nav>
+          <script>
+                function wrapper2() {
+                 document.getElementById('wrapper2').style.display = "block";
+               }
+               function wrapper3() {
+                 document.getElementById('wrapper3').style.display = "block";
+               }
+               function wrapper4() {
+                 document.getElementById('wrapper4').style.display = "block";
+               }
+               $(document).ready(function(){
+                $(".f-show").click(function(){
+                    $(".footer").show();
+                });
+                });
+        </script>
+    </section>
+
+    <form id="myForm">
+        <div class="wrapper1" id="wrapper1">
+            <section class="container-fluid img-container">
+                <h1 class="text-center text-white font-weight-bold p-5 h2-tx">iPhone, iPad <br>and Watch</h1>
+            </section>
+        </div>
+
+
+        <section class="wrapper2 mb-5 pb-5" id="wrapper2">
+                <div class="container-fluid mt-5 pt-5">
+                    <div class="row" id="iphones-container">
+                    </div>
+                </div>
+        </section>
+
+
+        <section class="wrapper3 mb-5 pb-5" id="wrapper3">
+            <div class="container-fluid mt-5">
+                   <div class="row" id="ipads-container">
+                    </div>
+                </div>
+        </section>
+
+        <section class="wrapper4 mb-5 pb-5" id="wrapper4">
+            <div class="container-fluid mt-5">
+                   <div class="row" id="applewatch-container">
+                    </div>
+                </div>
+        </section>
+
+        <footer class="footer border-top-gray bg-f" id="footer">
+            <div class="container">
+                    <div class="d-flex justify-content-center">
+                            <div class="btn-group pt-2 pb-2" role="group" aria-label="Basic example">
+                                <button type="button" class="total btn btn-primary btn-lg" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    <svg class="mx-auto d-block svg-bag" viewBox="0 0 192 192">
+                                            <path d="M0,192v-192h192v192z" fill="none"></path>
+                                            <path d="M96,3.84c-21.255,0 -38.4,17.145 -38.4,38.4v7.68h-30.36l-0.36,3.36l-15.36,134.4l-0.48,4.32h169.92l-0.48,-4.32l-15.36,-134.4l-0.36,-3.36h-30.36v-7.68c0,-21.255 -17.145,-38.4 -38.4,-38.4zM96,11.52c17.145,0 30.72,13.575 30.72,30.72v7.68h-61.44v-7.68c0,-17.145 13.575,-30.72 30.72,-30.72zM34.2,57.6h23.4v8.76c-2.295,1.335 -3.84,3.765 -3.84,6.6c0,4.245 3.435,7.68 7.68,7.68c4.245,0 7.68,-3.435 7.68,-7.68c0,-2.835 -1.545,-5.265 -3.84,-6.6v-8.76h61.44v8.76c-2.295,1.335 -3.84,3.765 -3.84,6.6c0,4.245 3.435,7.68 7.68,7.68c4.245,0 7.68,-3.435 7.68,-7.68c0,-2.835 -1.545,-5.265 -3.84,-6.6v-8.76h23.4l14.52,126.72h-152.64z">
+                                            </path>
+                                    </svg>
+                                </button>
+                                <button onclick="reset()" type="button" class="btn btn-danger btn-lg">Descartar</button>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog mt-5 pt-5" role="document">
+                            <div class="modal-content p-2">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Confirmar compra</h5>
+                                    <button type="button" class="close volver" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Tus compras fueron las siguientes:</p>
+                                    <p id="compras"></p>
+    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary volver"
+                                        data-dismiss="modal">Volver</button>
+                                    <button type="button" class="btn btn-success">Confirmar compra</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+          </footer>
+    </form>
+    <script>   
+        var section = document.getElementById("iphones-container");
+            for (var i = 0; i < iphones.length; i++) {
+            var iphone = iphones[i];
+            var nombre = iphone.nombre;
+            var nomenclatura = iphone.nomenclatura;
+            var precio = iphone.precio;
+            var color = iphone.color;
+            var color2 = iphone.color2;
+            var almacenamiento = iphone.almacenamiento;
+            var descripcion = iphone.descripcion;
+            var imagen;
+            if (iphones[i].imagen != undefined)
+                imagen = iphones[i].imagen;
+            section.innerHTML += '' +
+                '<div class="col-md-6 col-sticky">' +
+                '<div class="card mb-5">' +
+                '<div class="card-horizontal">' +
+                '<div class="card-body">' +
+                '<h5 class="card-title">' + nombre + '</h5>' +
+                '<ul class="list-inline">' +
+                '<li class="list-inline-item">' +
+                '<p class="align-middle text-center bg-dark text-white text-uppercase font-weight-bold pt-1 pb-1 pl-3 pr-3 rounded">' +
+                '<span class="text-small">' + almacenamiento + '</span><br>' +
+                'gb' +
+                '</p>' +
+                '</li>' +
+                '<li class="list-inline-item">' +
+                '<p class="align-middle text-center bg-dark text-white text-uppercase font-weight-bold pt-1 pb-1 pl-3 pr-3 rounded">' +
+                '<span class="text-small"> ' + color + '</span><br>' +
+                '' + color2 + '' +
+                '</p>' +
+                '</li>' +
+                '</ul>' +
+                '<div class="align-middle font-weight-bold"><span class="badge badge-dark p-2">' + precio + '<sup>' + nomenclatura + '</sup></span></div>' +
+                '</div>' +
+                '<div class="card-img-top">' +
+                '<img class="img-responsive mx-auto d-block iphones card-img-right" src="' + imagen + '"' + iphone.imagen + '/>' +
+                '</div>' +
+                '</div>' +
+                '<div class="card-footer">' +
+                '<p class="text-center text-uppercase text-small">Añadir al carrito</p>' +
+                '<div class="input-group">' +
+                '<div class="input-group-prepend sub">' +
+                '<button type="button" class="btn btn-primary btn-default">' +
+                '<svg class="align-middle svg-inc" viewBox="0 0 192 192">' +
+                '<path d="M24,88v16h144v-16z"></path>' +
+                '</svg>' +
+                '</button>' +
+                '</div>' +
+                '<input class="form-control text-center form-control-default" type="text" id="' + iphone.nombre.replace(/\s+/g, "") + '" value="0" disabled />' +
+                '<div class="input-group-prepend add">' +
+                '<button type="button" class="btn btn-primary rounded-right btn-default">' +
+                '<svg class="align-middle svg-inc" viewBox="0 0 192 192">' +
+                '<path d="M88,16v72h-72v16h72v72h16v-72h72v-16h-72v-72z"></path>' +
+                '</svg>' +
+                '</button>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+
+        } 
+    </script>
+
+    <script>
+        var section = document.getElementById("ipads-container");
+            for (var i = 0; i < ipads.length; i++) {
+        var ipad = ipads[i];
+        var nombre = ipad.nombre;
+        var nomenclatura = ipad.nomenclatura;
+        var precio = ipad.precio;
+        var color = ipad.color;
+        var color2 = ipad.color2;
+        var almacenamiento = ipad.almacenamiento;
+        var descripcion = ipad.descripcion;
+        var imagen;
+        if (ipads[i].imagen != undefined)
+            imagen = ipads[i].imagen;
+        section.innerHTML += '' +
+            '<div class="col-md-4 col-sticky">' +
+            '<div class="card mb-5">' +
+            '<div class="card-horizontal">' +
+            '<div class="card-body">' +
+            '<h5 class="card-title">' + nombre + '<br><span class="badge badge-danger text-uppercase">¡Nuevo!</span></h5>' +
+            '<ul class="list-inline">' +
+            '<li class="list-inline-item">' +
+            '<p class="align-middle text-center bg-dark text-white text-uppercase font-weight-bold pt-1 pb-1 pl-3 pr-3 rounded">' +
+            '<span class="text-small">' + almacenamiento + '</span><br>' +
+            'gb' +
+            '</p>' +
+            '</li>' +
+            '<li class="list-inline-item">' +
+            '<p class="align-middle text-center bg-dark text-white text-uppercase font-weight-bold pt-1 pb-1 pl-3 pr-3 rounded">' +
+            '<span class="text-small"> ' + color + '</span><br>' +
+            '' + color2 + '' +
+            '</p>' +
+            '</li>' +
+            '</ul>' +
+            '<div class="align-middle font-weight-bold"><span class="badge badge-dark p-2">' + precio + '<sup>' + nomenclatura + '</sup></span></div>' +
+            '</div>' +
+            '<div class="card-img-top">' +
+            '<img class="img-responsive mx-auto d-block iphones card-img-right" src="' + imagen + '"' + ipad.imagen + '/>' +
+            '</div>' +
+            '</div>' +
+            '<div class="card-footer">' +
+            '<p class="text-center text-uppercase text-small">Añadir al carrito</p>' +
+            '<div class="input-group">' +
+            '<div class="input-group-prepend sub">' +
+            '<button type="button" class="btn btn-primary btn-default">' +
+            '<svg class="align-middle svg-inc" viewBox="0 0 192 192">' +
+            '<path d="M24,88v16h144v-16z"></path>' +
+            '</svg>' +
+            '</button>' +
+            '</div>' +
+            '<input class="form-control text-center form-control-default" type="text" id="' + ipad.nombre.replace(/\s+/g, "") + '" value="0" disabled />' +
+            '<div class="input-group-prepend add">' +
+            '<button type="button" class="btn btn-primary rounded-right btn-default">' +
+            '<svg class="align-middle svg-inc" viewBox="0 0 192 192">' +
+            '<path d="M88,16v72h-72v16h72v72h16v-72h72v-16h-72v-72z"></path>' +
+            '</svg>' +
+            '</button>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
+
+    }
+    </script>
+
+    <script>
+         var section = document.getElementById("applewatch-container");
+            for (var i = 0; i < watchs.length; i++) {
+                var watch = watchs[i];
+                var nombre = watch.nombre;
+                var nomenclatura = watch.nomenclatura;
+                var precio = watch.precio;
+                var color = watch.color;
+                var color2 = watch.color2;
+                var almacenamiento = watch.almacenamiento;
+                var descripcion = watch.descripcion;
+                var imagen;
+                if (watchs[i].imagen != undefined)
+                    imagen = watchs[i].imagen;
+                section.innerHTML += '' +
+                    '<div class="col-md-4 col-sticky">' +
+                    '<div class="card mb-5">' +
+                    '<div class="card-horizontal">' +
+                    '<div class="card-body">' +
+                    '<h5 class="card-title">' + nombre + '<br><span class="badge badge-danger text-uppercase">¡Nuevo!</span></h5>' +
+                    '<ul class="list-inline">' +
+                    '<li class="list-inline-item">' +
+                    '<p class="align-middle text-center bg-dark text-white text-uppercase font-weight-bold pt-1 pb-1 pl-3 pr-3 rounded">' +
+                    '<span class="text-small">' + almacenamiento + '</span><br>' +
+                    '</p>' +
+                    '</li>' +
+                    '<li class="list-inline-item">' +
+                    '<p class="align-middle text-center bg-dark text-white text-uppercase font-weight-bold pt-1 pb-1 pl-3 pr-3 rounded">' +
+                    '<span class="text-small"> ' + color + '</span><br>' +
+                    '' + color2 + '' +
+                    '</p>' +
+                    '</li>' +
+                    '</ul>' +
+                    '<div class="align-middle font-weight-bold"><span class="badge badge-dark p-2">' + precio + '<sup>' + nomenclatura + '</sup></span></div>' +
+                    '</div>' +
+                    '<div class="card-img-top">' +
+                    '<img class="img-responsive mx-auto d-block iphones card-img-right" src="' + imagen + '"' + watch.imagen + '/>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="card-footer">' +
+                    '<p class="text-center text-uppercase text-small">Añadir al carrito</p>' +
+                    '<div class="input-group">' +
+                    '<div class="input-group-prepend sub">' +
+                    '<button type="button" class="btn btn-primary btn-default">' +
+                    '<svg class="align-middle svg-inc" viewBox="0 0 192 192">' +
+                    '<path d="M24,88v16h144v-16z"></path>' +
+                    '</svg>' +
+                    '</button>' +
+                    '</div>' +
+                    '<input class="form-control text-center form-control-default" type="text" id="' + watch.nombre.replace(/\s+/g, "") + '" value="0" disabled />' +
+                    '<div class="input-group-prepend add">' +
+                    '<button type="button" class="btn btn-primary rounded-right btn-default">' +
+                    '<svg class="align-middle svg-inc" viewBox="0 0 192 192">' +
+                    '<path d="M88,16v72h-72v16h72v72h16v-72h72v-16h-72v-72z"></path>' +
+                    '</svg>' +
+                    '</button>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+    
+            } 
+    </script>
+
+    <script>
+        function reset() {
+            document.getElementById("myForm").reset();
+        }
+    </script>
+
+    <script>
+        $('.add').click(function () {
+            if ($(this).prev().val()) {
+                $(this).prev().val(+$(this).prev().val() + 1);
+            }
+        });
+        $('.sub').click(function () {
+            if ($(this).next().val() > 0) {
+                if ($(this).next().val() > 0) $(this).next().val(+$(this).next().val() - 1);
+            }
+        });
+    </script>
+
+    <script>
+        $('.volver').click(function () {
+            document.getElementById("compras").innerHTML = ""
+        });
+        $('.total').click(function () {
+            for (i = 0; i < iphones.length; i++) {
+                var iphone = iphones[i];
+                var imagen;
+                        if (iphones[i].imagen != undefined)
+                            imagen = iphones[i].imagen;
+                var cantidad = document.getElementById(iphone.nombre.replace(/\s+/g, ""));
+                if (cantidad.value > 0) {
+                    document.getElementById("compras").innerHTML += 
+                    '<img class="img-responsive mx-auto d-block iphones card-img-right image-buy" src="' + imagen + '"' + iphone.imagen + '/>' + 
+                    '<h5 class="card-title text-center"><span class="badge badge-danger text-uppercase">' + iphone.nombre + '' + ' <span class="badge badge-light">' + cantidad.value + '</span></span></h5><hr>';
+                }
+            }
+        });
+    </script>
+
+<script>
+    $('.volver').click(function () {
+        document.getElementById("compras").innerHTML = ""
+    });
+    $('.total').click(function () {
+        for (i = 0; i < ipads.length; i++) {
+            var ipad = ipads[i];
+            var imagen;
+                    if (ipads[i].imagen != undefined)
+                        imagen = ipads[i].imagen;
+            var cantidad = document.getElementById(ipad.nombre.replace(/\s+/g, ""));
+            if (cantidad.value > 0) {
+                document.getElementById("compras").innerHTML +=
+                '<img class="img-responsive mx-auto d-block iphones card-img-right image-buy" src="' + imagen + '"' + ipad.imagen + '/>' + 
+                '<h5 class="card-title text-center"><span class="badge badge-danger text-uppercase">' + ipad.nombre + '' + ' <span class="badge badge-light">' + cantidad.value + '</span></span></h5><hr>';            }
+        }
+    });
+</script>
+
+<script>
+    $('.volver').click(function () {
+        document.getElementById("compras").innerHTML = ""
+    });
+    $('.total').click(function () {
+        for (i = 0; i < watchs.length; i++) {
+            var watch = watchs[i];
+            var imagen;
+                    if (watchs[i].imagen != undefined)
+                        imagen = watchs[i].imagen;
+            var cantidad = document.getElementById(watch.nombre.replace(/\s+/g, ""));
+            if (cantidad.value > 0) {
+                document.getElementById("compras").innerHTML += 
+                '<img class="img-responsive mx-auto d-block iphones card-img-right image-buy" src="' + imagen + '"' + watch.imagen + '/>' + 
+                '<h5 class="card-title text-center"><span class="badge badge-danger text-uppercase">' + watch.nombre + '' + ' <span class="badge badge-light">' + cantidad.value + '</span></span></h5><hr>';
+            }
+        }
+    });
+</script>
+
+</body>
+
+</html>

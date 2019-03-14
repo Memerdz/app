@@ -1,0 +1,210 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navbar {
+    padding: 3px 1rem;
+}
+.navbar {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+.navbar-brand {
+    margin-right: 0!important;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.text-uppercase-none {
+    text-transform: none;
+}
+.text-color:hover svg {
+    color: #0099ff!important;
+    fill: #0099ff;
+}
+.text-color:hover {
+    color: #0099ff!important;   
+}
+svg:hover {
+    fill: #0099ff;
+}
+.svg-logo {
+    height: 23px;
+    width: 23px;
+    fill: rgb(45, 47, 153);
+}
+.svg-iphone {
+    max-width: 23px;
+    height: 23px;
+    width: 23px;
+    fill: white;
+}
+.svg-ipad {
+    max-width: 23px;
+    height: 23px;
+    width: 23px;
+    fill: white;
+}
+.svg-watch{
+    height: 23px;
+    width: 23px;
+    fill: white;
+}
+.svg-inc {
+    height: 15px;
+    width: 15px;
+    fill: rgb(255, 255, 255);
+}
+.svg-plus {
+    max-width: 30px;
+}
+.svg-bag {
+    height: 23px;
+    width: 23px;
+    fill: white;
+}
+.input-group-text {
+    z-index: 10 !important;
+}
+/*
+.col-sticky {
+    border-top: 1px solid #e0e0e0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 45px;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}*/
+.card {
+    margin: 0;
+}
+.card {
+    border: 0px solid rgba(0, 0, 0, 0.125) !important;
+    border-radius: 0;
+}
+
+.card-footer {
+    padding: .75rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-top: 1px solid rgba(0, 0, 0, .125);
+}
+
+.iphones {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: auto;
+    height: 130px;
+} 
+.image-buy {
+    width: auto;
+    height: 90px;
+}
+.border-top-gray {
+    border-top: 1px solid #dfdfdf !important;
+}
+
+.bg-f {
+    background-color: rgba(255, 255, 255, 0.856);
+}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.card-img-top {
+    width: auto;
+}
+
+.text-small {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 0.7rem;
+    text-align: center;
+    font-weight: 400;
+}
+.text-below {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.7rem;
+    text-align: center;
+    font-weight: 400;
+}
+.modal-backdrop {
+    z-index: 999!important;
+}
+.modal-body {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1rem;
+    height: 350px;
+    overflow-y: scroll;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+
+    }
+
+}
+@media (min-width: 1200px) {
+   .navbar-container {
+        max-width: 300px!important;
+    } 
+}
+.wrapper2 {
+    display: none;
+}
+.wrapper3 {
+    display: none;
+}
+.wrapper4 {
+    display: none;
+}
+.footer {
+    display: none;
+}
+.img-container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(https://www.apple.com/v/home/eb/images/promos/apple-events/march_event_2019__fyoxvr9eucuq_large.jpg);
+}
+.img-container {
+    padding-top: 10rem;
+    height: 100vh;
+}
+@media (max-width: 600px) {
+    .img-container {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url(https://www.apple.com/v/home/eb/images/promos/apple-events/march_event_2019__fyoxvr9eucuq_large.jpg);
+    }
+    .h2-tx {
+        text-align: unset!important;
+    }
+
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { 
+    .col-md-6 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+ }
+ @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    .col-md-6 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+ }
